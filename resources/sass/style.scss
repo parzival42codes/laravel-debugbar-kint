@@ -1,0 +1,66 @@
+.laravel-debugbar-vardumper {
+    display: flex;
+
+    .laravel-debugbar-vardumper-dump {
+        white-space: pre-wrap;
+        overflow: auto;
+        font-size: 0.6em;
+        font-family: monospace;
+    }
+
+    .laravel-debugbar-vardumper-localisation {
+        font-size: 0.6em;
+        font-family: monospace;
+    }
+
+    .laravel-debugbar-vardumper-link {
+        flex: 4 !important;
+        margin: 0 2em;
+
+        span {
+            padding: 1em 2em;
+            font-size: 0.75em;
+            width: 100%;
+        }
+    }
+
+    .laravel-debugbar-vardumper-file {
+        padding: 0 2em;
+        margin: 0 2em;
+        flex: 3 !important;
+        font-size: 0.75em;
+    }
+
+    .laravel-debugbar-vardumper-line {
+        padding: 0 2em;
+        margin: 0 2em;
+        flex: 1 !important;
+        font-size: 0.75em;
+    }
+
+    .laravel-debugbar-vardumper-backtrace {
+        flex: 1 !important;
+        margin: 0 2em;
+
+        span {
+            padding: 1em 2em;
+            font-size: 0.75em;
+        }
+    }
+}
+
+.laravel-debugbar-modal-backtrace {
+    table {
+        width: 100%;
+
+        th {
+            padding: 1em 2em;
+            font-size: 0.75em;
+        }
+
+        td {
+            padding: 1em 2em;
+            font-size: 0.75em;
+        }
+    }
+}
