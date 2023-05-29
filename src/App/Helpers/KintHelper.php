@@ -11,3 +11,13 @@ if (! function_exists('kd')) {
         Kint::$return = false;
     }
 }
+
+if (! function_exists('kintDebug')) {
+    /** @phpstan-ignore-next-line */
+    function kd($dump): void
+    {
+        Kint::$return = true;
+        KintService::addKint(Kint::dump($dump));
+        Kint::$return = false;
+    }
+}
