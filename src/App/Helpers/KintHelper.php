@@ -1,5 +1,6 @@
 <?php
 
+use parzival42codes\LaravelDebugbarKint\App\Services\KintDumpService;
 use parzival42codes\LaravelDebugbarKint\App\Services\KintService;
 
 if (! function_exists('kd')) {
@@ -12,12 +13,10 @@ if (! function_exists('kd')) {
     }
 }
 
-if (! function_exists('kintDebug')) {
+if (! function_exists('kDump')) {
     /** @phpstan-ignore-next-line */
-    function kd($dump): void
+    function kDump(): KintDumpService
     {
-        Kint::$return = true;
-        KintService::addKint(Kint::dump($dump));
-        Kint::$return = false;
+        return new KintDumpService();
     }
 }

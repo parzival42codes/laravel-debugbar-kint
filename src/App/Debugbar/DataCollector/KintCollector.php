@@ -17,11 +17,11 @@ class KintCollector extends DataCollector implements Renderable
      */
     public function collect()
     {
-        $kint = KintService::getKint();
+        $kint = kDump()->debugbar();
 
         return [
-            'nb_kint' => count($kint),
-            'kint' => $kint,
+            'nb_kint' => $kint->getCount(),
+            'kint' => $kint->outputAsArray(),
         ];
     }
 
