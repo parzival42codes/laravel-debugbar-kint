@@ -1,5 +1,5 @@
 {
-    "name": "parzival42codes/laravel-debugbar-kint",
+    "name": "parzival42codes/laravel-kint",
     "description": "Debugbar Kint",
     "license": "MIT",
     "require": {
@@ -13,7 +13,7 @@
     },
     "autoload": {
         "psr-4": {
-            "parzival42codes\\LaravelDebugbarKint\\": "src"
+            "parzival42codes\\LaravelKint\\": "src"
         },
         "files": [
           "src/App/Helpers/KintHelper.php"
@@ -21,7 +21,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "parzival42codes\\LaravelDebugbarKint\\Tests\\": "tests"
+            "parzival42codes\\LaravelKint\\Tests\\": "tests"
         }
     },
     "config": {
@@ -31,7 +31,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "parzival42codes\\LaravelDebugbarKint\\KintServiceProvider"
+                "parzival42codes\\LaravelKint\\KintServiceProvider"
             ]
         }
     }

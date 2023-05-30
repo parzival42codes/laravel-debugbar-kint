@@ -1,10 +1,10 @@
 <?php
 
-namespace parzival42codes\LaravelDebugbarKint\App\Debugbar\DataCollector;
+namespace parzival42codes\LaravelKint\App\Debugbar\DataCollector;
 
 use DebugBar\DataCollector\DataCollector;
 use DebugBar\DataCollector\Renderable;
-use parzival42codes\LaravelDebugbarKint\App\Services\KintService;
+use parzival42codes\LaravelKint\App\Services\KintService;
 
 class KintCollector extends DataCollector implements Renderable
 {

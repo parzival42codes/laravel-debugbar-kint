@@ -1,6 +1,6 @@
 <?php
 
-namespace parzival42codes\LaravelDebugbarKint\App\Services;
+namespace parzival42codes\LaravelKint\App\Services;
 
 class KintService
 {

@@ -1,7 +1,7 @@
 <?php
 
-use parzival42codes\LaravelDebugbarKint\App\Services\KintDumpService;
-use parzival42codes\LaravelDebugbarKint\App\Services\KintService;
+use parzival42codes\LaravelKint\App\Services\KintDumpService;
+use parzival42codes\LaravelKint\App\Services\KintService;
 
 if (! function_exists('kd')) {
     /** @phpstan-ignore-next-line */
