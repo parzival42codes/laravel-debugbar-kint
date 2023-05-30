@@ -17,7 +17,7 @@ class KintCollector extends DataCollector implements Renderable
      */
     public function collect()
     {
-        $kint = kDump()->debugbar();
+        $kint = kd()->debugbar();
 
         return [
             'nb_kint' => $kint->getCount(),
