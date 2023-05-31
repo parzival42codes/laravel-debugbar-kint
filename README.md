@@ -1,11 +1,46 @@
-# laravel-resources-optimisation
+# laravel-kint
 
-Was macht die Package ?
+Laravel Kint ist ein Wrapper für Kint (https://github.com/kint-php/kint), einem Debugger für PHP.
 
-Diese Package dient dazu die Ausgabe an den Browser zu optimieren.
-D.h. komprimieren der Ausgabe etc.
+Über die Function kd() wird eine Instanz des Wrappers aufgerufen.
+Dadurch stehen folgende Methoden zur Auswahl:
 
-- Es wird geprüft, wann die Datei das letzte mal geändert wurde (wenn die Daten vorliegen), und sendet ggf. einen "304 Not Modified".
-- Die Ausgabe wird mittels gzcompress verkleinert. Z.B. 144 kB auf 24.8 kB. Dies ist auch mit Assets möglich.
-- Der eTag wird angepasst gesendet.
-- Die Header werden auf optimierten Einstellungen gesendet.
+## collection(string|null $dumpCollectionKey = 'default')
+
+Setzt die aktuelle Dump Collection, es können beliebig viele erzeugt werden.
+
+Reserviert sind:
+
+- **debugbar()** # 'debugbar', Setzt die Collection auf 'debugbar'. Es ist eine Einbindung für die Debugbar von
+  Barryvdh\Debugbar.
+- **log()** # 'log', Schreibt die Ausgabe in einen Logchannel.
+
+## dump (mixed $dump, ?array $context)
+
+Nimmt den Dump auf und ggf. einen Context als Array.
+
+Der schlüssel '_' im Context wird als Titel genommen.
+
+## render()
+
+Erzeugt eine Bildschirmausgabe.
+
+## logWrite()
+
+Schreibt das Log
+
+## output()
+
+Gibt den Output als String zur aktuellen Dump Collection zurück.
+
+## outputAsArray()
+
+Gibt den das Array zur aktuellen Dump Collection zurück.
+
+## getCount()
+
+Gibt die Anzahl der Einträge im Array zur aktuellen Dump Collection zurück
+
+## die()
+
+Beendet den Script durchlauf / bricht ab.
