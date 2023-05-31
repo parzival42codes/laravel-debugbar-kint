@@ -2,6 +2,23 @@
 
 Laravel Kint ist ein Wrapper für Kint (https://github.com/kint-php/kint), einem Debugger für PHP.
 
+## Installation
+
+```bash
+php artisan vendor:publish --tag=laravel-kint-config
+```
+
+Add Kint Log Channel (example):
+
+```php
+'kint' => [
+'driver' => 'daily', 'path' => storage_path('logs/kint/kint.log'), 'level' => 'debug',
+'days'   => 14,
+],
+```
+
+## Benutzung
+
 Über die Function kd() wird eine Instanz des Wrappers aufgerufen.
 Dadurch stehen folgende Methoden zur Auswahl:
 
@@ -44,3 +61,11 @@ Gibt die Anzahl der Einträge im Array zur aktuellen Dump Collection zurück
 ## die()
 
 Beendet den Script durchlauf / bricht ab.
+
+## Authors
+
+[**Stefan Schlombs**](https://github.com/parzival42codes)
+
+## License
+
+Licensed under the MIT License
