@@ -5,14 +5,15 @@ namespace parzival42codes\LaravelKint\App\Services;
 use Illuminate\Support\Facades\Log;
 use Kint\Kint;
 use Spatie\Backtrace\Backtrace;
-use function Pest\Laravel\followingRedirects;
 
 class KintDumpService
 {
     private static array $dumpCollection = [
         'default' => [], 'debugbar' => [], 'log' => [],
     ];
+
     private string $dumpCollectionKey = 'default';
+
     private string $dumpCollectionKeyOriginal = 'default';
 
     /**
@@ -20,10 +21,9 @@ class KintDumpService
      *
      * @param  mixed  $dump
      * @param  array  $context
-     *
      * @return $this
      */
-    public function dump(mixed $dump, array $context = []): KintDumpService
+    public function dump(mixed $dump, array $context = []): self
     {
         if ($this->dumpCollectionKey === 'log') {
             Kint::$enabled_mode = Kint::MODE_TEXT;
@@ -53,6 +53,7 @@ class KintDumpService
         if ($this->dumpCollectionKey === 'log') {
             Kint::$enabled_mode = true;
         }
+
         return $this;
     }
 
@@ -61,10 +62,11 @@ class KintDumpService
      *
      * @return $this
      */
-    public function render(): KintDumpService
+    public function render(): self
     {
         $this->dumpCollectionKey = $this->dumpCollectionKeyOriginal;
         echo $this->output();
+
         return $this;
     }
 
@@ -111,20 +113,20 @@ class KintDumpService
      */
     public function die(): void
     {
-        die();
+        exit();
     }
 
     /**
      * Sets the current dump collection, any number can be created.
      *
      * @param  string|null  $dumpCollectionKey
-     *
      * @return $this
      */
-    public function collection(string|null $dumpCollectionKey = 'default'): KintDumpService
+    public function collection(string|null $dumpCollectionKey = 'default'): self
     {
         $this->dumpCollectionKeyOriginal = $dumpCollectionKey;
         $this->dumpCollectionKey = $dumpCollectionKey;
+
         return $this;
     }
 
@@ -133,9 +135,10 @@ class KintDumpService
      *
      * @return $this
      */
-    public function debugbar(): KintDumpService
+    public function debugbar(): self
     {
         $this->dumpCollectionKey = 'debugbar';
+
         return $this;
     }
 
@@ -144,9 +147,10 @@ class KintDumpService
      *
      * @return $this
      */
-    public function log(): KintDumpService
+    public function log(): self
     {
         $this->dumpCollectionKey = 'log';
+
         return $this;
     }
 
@@ -154,15 +158,15 @@ class KintDumpService
      * Writes the log
      *
      * @param  string  $type
-     *
      * @return $this
      */
-    public function logWrite(string $type = 'debug'): KintDumpService
+    public function logWrite(string $type = 'debug'): self
     {
         foreach (self::$dumpCollection['log'] as $item) {
             Log::channel('kint')
                 ->$type($item['content'].PHP_EOL.$item['file'].' # '.$item['line'], $item['context']);
         }
+
         return $this;
     }
 
@@ -170,7 +174,6 @@ class KintDumpService
      * Dump to String Helper
      *
      * @param  array  $item
-     *
      * @return string
      */
     private function parseDumpView(array $item): string
@@ -182,5 +185,4 @@ class KintDumpService
             return '<div>'.$item['content'].'<span style="font-size: smaller;">@ '.$item['file'].' # '.$item['line'].'</span></div>';
         }
     }
-
 }

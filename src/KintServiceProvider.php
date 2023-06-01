@@ -3,9 +3,9 @@
 namespace parzival42codes\LaravelKint;
 
 use Barryvdh\Debugbar\Facades\Debugbar;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Spatie\LaravelPackageTools\Package;
 use parzival42codes\LaravelKint\App\Debugbar\DataCollector\KintCollector;
+use Spatie\LaravelPackageTools\Package;
+use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class KintServiceProvider extends PackageServiceProvider
 {
