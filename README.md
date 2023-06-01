@@ -5,10 +5,10 @@ Laravel Kint ist ein Wrapper für Kint (https://github.com/kint-php/kint), einem
 ## Installation
 
 ```bash
-php artisan vendor:publish --tag=laravel-kint-config
+php artisan vendor:publish --tag=kint-config
 ```
 
-Add Kint Log Channel (example):
+Hinzufügen des Kint Log Channel (example):
 
 ```php
 'kint' => [

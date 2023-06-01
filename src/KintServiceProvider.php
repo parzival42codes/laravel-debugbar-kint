@@ -21,6 +21,8 @@ class KintServiceProvider extends PackageServiceProvider
 
     public function registeringPackage(): void
     {
-        Debugbar::addCollector(new KintCollector());
+        if (config('kint.debugbar')) {
+            Debugbar::addCollector(new KintCollector());
+        }
     }
 }

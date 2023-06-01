@@ -163,7 +163,7 @@ class KintDumpService
     public function logWrite(string $type = 'debug'): self
     {
         foreach (self::$dumpCollection['log'] as $item) {
-            Log::channel('kint')
+            Log::channel(config('kint.log'))
                 ->$type($item['content'].PHP_EOL.$item['file'].' # '.$item['line'], $item['context']);
         }
 
