@@ -19,8 +19,6 @@ class KintDumpService
     /**
      * Records the dump and, if necessary, a context as an array.
      *
-     * @param  mixed  $dump
-     * @param  array  $context
      * @return $this
      */
     public function dump(mixed $dump, array $context = []): self
@@ -72,8 +70,6 @@ class KintDumpService
 
     /**
      * Returns the output as a string for the current dump collection.
-     *
-     * @return string
      */
     public function output(): string
     {
@@ -82,8 +78,6 @@ class KintDumpService
 
     /**
      * Returns the array for the current dump collection.
-     *
-     * @return array
      */
     public function outputAsArray(): array
     {
@@ -98,8 +92,6 @@ class KintDumpService
 
     /**
      * Returns the number of entries in the array for the current dump collection
-     *
-     * @return int
      */
     public function getCount(): int
     {
@@ -108,8 +100,6 @@ class KintDumpService
 
     /**
      * Ends the script run / breaks off.
-     *
-     * @return void
      */
     public function die(): void
     {
@@ -119,7 +109,6 @@ class KintDumpService
     /**
      * Sets the current dump collection, any number can be created.
      *
-     * @param  string|null  $dumpCollectionKey
      * @return $this
      */
     public function collection(string|null $dumpCollectionKey = 'default'): self
@@ -157,7 +146,6 @@ class KintDumpService
     /**
      * Writes the log
      *
-     * @param  string  $type
      * @return $this
      */
     public function logWrite(string $type = 'debug'): self
@@ -172,15 +160,12 @@ class KintDumpService
 
     /**
      * Dump to String Helper
-     *
-     * @param  array  $item
-     * @return string
      */
     private function parseDumpView(array $item): string
     {
         if ($item['title'] || $item['context']) {
             return '<div>'.$item['content'].'<span style="font-size: smaller;"><details><summary>'.$item['title'].' - Context @ '.$item['file'].' # '.$item['line'].' </summary>'.var_export($item['context'],
-                    true).' </details></span></div>';
+                true).' </details></span></div>';
         } else {
             return '<div>'.$item['content'].'<span style="font-size: smaller;">@ '.$item['file'].' # '.$item['line'].'</span></div>';
         }

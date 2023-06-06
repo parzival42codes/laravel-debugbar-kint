@@ -12,7 +12,7 @@ class KintCollector extends DataCollector implements Renderable
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      */
     public function collect()
     {
@@ -25,7 +25,7 @@ class KintCollector extends DataCollector implements Renderable
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function getName()
     {
@@ -33,7 +33,7 @@ class KintCollector extends DataCollector implements Renderable
     }
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function getWidgets()
     {
