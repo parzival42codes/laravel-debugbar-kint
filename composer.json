@@ -16,7 +16,7 @@
             "parzival42codes\\LaravelKint\\": "src"
         },
         "files": [
-          "src/App/Helpers/KintHelper.php"
+            "src/App/Helpers/KintHelper.php"
         ]
     },
     "autoload-dev": {

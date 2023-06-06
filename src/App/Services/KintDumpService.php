@@ -109,9 +109,10 @@ class KintDumpService
     /**
      * Sets the current dump collection, any number can be created.
      *
+     * @param  string  $dumpCollectionKey
      * @return $this
      */
-    public function collection(string|null $dumpCollectionKey = 'default'): self
+    public function collection(string $dumpCollectionKey = 'default'): self
     {
         $this->dumpCollectionKeyOriginal = $dumpCollectionKey;
         $this->dumpCollectionKey = $dumpCollectionKey;
