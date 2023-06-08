@@ -41,11 +41,11 @@ class KintCollector extends DataCollector implements Renderable
             $this->getName() => [
                 'icon' => 'archive',
                 'widget' => 'PhpDebugBar.Widgets.ListWidget',
-                'map' => $this->getName().'.kint',
+                'map' => $this->getName() . '.kint',
                 'default' => '[]',
             ],
-            $this->getName().':badge' => [
-                'map' => $this->getName().'.nb_kint',
+            $this->getName() . ':badge' => [
+                'map' => $this->getName() . '.nb_kint',
                 'default' => 0,
             ],
         ];
