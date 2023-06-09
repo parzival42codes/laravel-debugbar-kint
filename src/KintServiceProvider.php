@@ -16,13 +16,14 @@ class KintServiceProvider extends PackageServiceProvider
     public function configurePackage(Package $package): void
     {
         $package->name(self::PACKAGE_NAME)
+
             ->hasConfigFile();
     }
 
     public function registeringPackage(): void
     {
         if (config('kint.debugbar')) {
-            Debugbar::addCollector(new KintCollector);
+            Debugbar::addCollector(new KintCollector());
         }
     }
 }
