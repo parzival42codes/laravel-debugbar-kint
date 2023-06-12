@@ -12,7 +12,7 @@ class KintCollector extends DataCollector implements Renderable
     }
 
     /**
-     * {@inheritdoc}
+     * @inheritdoc
      */
     public function collect()
     {
@@ -25,7 +25,7 @@ class KintCollector extends DataCollector implements Renderable
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function getName()
     {
@@ -33,7 +33,7 @@ class KintCollector extends DataCollector implements Renderable
     }
 
     /**
-     * {@inheritDoc}
+     * @inheritDoc
      */
     public function getWidgets()
     {
@@ -41,11 +41,11 @@ class KintCollector extends DataCollector implements Renderable
             $this->getName() => [
                 'icon' => 'archive',
                 'widget' => 'PhpDebugBar.Widgets.ListWidget',
-                'map' => $this->getName() . '.kint',
+                'map' => $this->getName().'.kint',
                 'default' => '[]',
             ],
-            $this->getName() . ':badge' => [
-                'map' => $this->getName() . '.nb_kint',
+            $this->getName().':badge' => [
+                'map' => $this->getName().'.nb_kint',
                 'default' => 0,
             ],
         ];
