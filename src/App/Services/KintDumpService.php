@@ -148,7 +148,6 @@ class KintDumpService
     {
         $configKintLog = config('kint.log');
         if (is_string($configKintLog)) {
-
             foreach (self::$dumpCollection['log'] as $item) {
                 Log::channel($configKintLog)
                     ->$type($item['content'] . PHP_EOL . $item['file'] . ' # ' . $item['line'], $item['context']);
