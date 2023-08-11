@@ -163,8 +163,10 @@ class KintDumpService
     private function parseDumpView(array $item): string
     {
         if ($item['title'] || $item['context']) {
-            return '<div>'.$item['content'].'<span style="font-size: smaller;"><details><summary>'.$item['title'].' - Context @ '.$item['file'].' # '.$item['line'].' </summary>'.var_export($item['context'],
-                true).' </details></span></div>';
+            return '<div>'.$item['content'].'<span style="font-size: smaller;"><details><summary>'.$item['title'].' - Context @ '.$item['file'].' # '.$item['line'].' </summary>'.var_export(
+                $item['context'],
+                true
+            ).' </details></span></div>';
         }
 
         return '<div>'.$item['content'].'<span style="font-size: smaller;">@ '.$item['file'].' # '.$item['line'].'</span></div>';
