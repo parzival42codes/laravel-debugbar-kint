@@ -95,14 +95,6 @@ class KintDumpService
     }
 
     /**
-     * Ends the script run / breaks off.
-     */
-    public function die(): void
-    {
-        exit();
-    }
-
-    /**
      * Sets the current dump collection, any number can be created.
      *
      * @return $this
